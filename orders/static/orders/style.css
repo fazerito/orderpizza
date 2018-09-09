@@ -1,0 +1,23 @@
+body {
+  padding-top: 80px;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 70px;
+    background-image: url("pizza1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+}
+
+h1 {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.jumbotron {
+    background: rgba(204, 204, 204, 0.85);
+}
