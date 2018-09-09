@@ -26,19 +26,6 @@ class Pizza(models.Model):
         ('m', 'Medium'),
         ('l', "Large")
     )
-    ADDITIONS = (
-        ('ham', 'Ham'),
-        ('cheese', 'Cheese'),
-        ('salami', 'Salami'),
-        ('bacon', 'Bacon'),
-        ('garlic', 'Garlic'),
-        ('tomato', 'Tomato'),
-        ('mushrooms', 'Mushrooms'),
-        ('pepper', 'Pepper'),
-        ('pineapple', 'Pineapple'),
-        ('olives', 'Olives'),
-        ('onion', 'Onion')
-    )
     name = models.CharField(max_length=64)
     size = models.CharField(max_length=1, choices=PIZZA_SIZES)
     toppings = models.ManyToManyField(Topping)
