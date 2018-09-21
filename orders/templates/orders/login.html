@@ -1,0 +1,23 @@
+{% extends  'orders/layout.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="container">
+  {% if user.is_authenticated %}
+  <center><h2>You are already logged in.</h2><center>
+  {% else %}
+  <h1>Login</h1>
+  <form class="form-grop" method="post">
+    {% csrf_token %}
+    Username <input type="text" name="username" value="">
+    <br><br>
+    Password <input type="password" name="password" value="">
+    <br><br>
+    <button class= "btn" type="submit" name="button">Login</button>
+  </form>
+  {% endif %}
+</div>
+
+
+{% endblock %}
