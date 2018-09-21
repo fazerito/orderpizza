@@ -1,34 +1,37 @@
 {% extends 'orders/layout.html' %}
 
 {% block content %}
-<h1>Register</h1>
-<div class="container">
-  <div class="form-group">
-    <form method="post">
-        {% csrf_token %}
-        <br>
-        {{ form.username }}
-        <br>
-        {{ form.email }}
-        <br>
-        {{ form.password1 }}
-        <br>
-        {{ form.password2 }}
-        <br>
-        {{ form.first_name }}
-        <br>
-        {{ form.last_name }}
-        <br>
-        {{ form.address }}
-        <br>
-        {{ form.city }}
-        <br>
-        {{ form.zip_code }}
-        <br>
-        </div>
-        <button class='btn' type='submit' name="button">Submit</button>
-    </form>
+{% if registered %}
+  <h2>You have successfully registered</h2>
+{% else %}
+  <h1>Register</h1>
+  <div class="container">
+    <div class="form-group">
+      <form method="post">
+          {% csrf_token %}
+          <br>
+          {{ form.username }}
+          <br>
+          {{ form.email }}
+          <br>
+          {{ form.password1 }}
+          <br>
+          {{ form.password2 }}
+          <br>
+          {{ form.first_name }}
+          <br>
+          {{ form.last_name }}
+          <br>
+          {{ form.address }}
+          <br>
+          {{ form.city }}
+          <br>
+          {{ form.zip_code }}
+          <br>
+          </div>
+          <button class='btn' type='submit' name="button">Submit</button>
+      </form>
+  </div>
 </div>
-</div>
-
+{% endif %}
 {% endblock %}
