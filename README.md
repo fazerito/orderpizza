@@ -1,2 +1,3 @@
-# orderpizza
-Web app made with django for an online pizza orders
+# Order Pizza
+
+Web application for an online pizza ordering
