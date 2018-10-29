@@ -40,24 +40,6 @@ class RegistrationForm(UserCreationForm):
             'placeholder': 'Last Name'
         }
     ))
-    address = forms.CharField(required=True, label='Address', widget=forms.TextInput(
-        attrs={
-            'class': 'form-control',
-            'placeholder': 'Address'
-        }
-    ))
-    city = forms.CharField(required=True, label='City', widget=forms.TextInput(
-        attrs={
-            'class': 'form-control',
-            'placeholder': 'City'
-        }
-    ))
-    zip_code = forms.CharField(required=True, label='Zip code', widget=forms.TextInput(
-        attrs={
-            'class': 'form-control',
-            'placeholder': 'Zip code'
-        }
-    ))
 
     class Meta:
         model = User
@@ -68,18 +50,12 @@ class RegistrationForm(UserCreationForm):
             'email',
             'password1',
             'password2',
-            'address',
-            'city',
-            'zip_code'
         )
     def save(self, commit=True):
         user = super(RegistrationForm, self).save(commit=False)
         user.first_name = self.cleaned_data['first_name']
         user.last_name = self.cleaned_data['last_name']
         user.email = self.cleaned_data['email']
-        user.address = self.cleaned_data['address']
-        user.city = self.cleaned_data['city']
-        user.zip_code = self.cleaned_data['zip_code']
 
         if commit:
             user.save()
