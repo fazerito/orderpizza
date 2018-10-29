@@ -3,84 +3,26 @@
 {% block title %} Menu {% endblock %}
 {% block content %}
 <h1>Menu</h1>
-<table style='width:1000px;'>
+<table class="menu">
   <tr>
     <th>Pizza</th>
-    <th>Small</th>
-    <th>Medium</th>
-    <th>Large</th>
+    <th>Price</th>
+    <th>Size</th>
     <th>Toppings</th>
   </tr>
+  {% for pizza in pizzas %}
     <tr>
-      <td>Margarete</td>
-      <td>10zł</td>
-      <td>12zł</td>
-      <td>15zł</td>
-      <td>Tomatoes, mozarella</td>
+      <td><a href="{{ pizza.get_absolute_url }}"> {{ pizza.name }}</a></td>
+      <td>{{ pizza.price }}</td>
+      <td>{{ pizza.size }}</td>
+      <td>
+        {% for t in pizza.toppings.all %}
+        {{ t.name }},
+        {% endfor %}
+      </td>
     </tr>
-    <tr>
-      <td>Napoletana</td>
-      <td>11zł</td>
-      <td>13zł</td>
-      <td>16zł</td>
-      <td>Tomatoes, mozarella, fish</td>
-    </tr>
-    <tr>
-      <td>Prosciutto e funghi</td>
-      <td>12zł</td>
-      <td>14zł</td>
-      <td>16zł</td>
-      <td>Tomatoes, mozarella, ham, mushrooms</td>
-    </tr>
-    <tr>
-      <td>Capriciossa</td>
-      <td>13zł</td>
-      <td>15zł</td>
-      <td>17zł</td>
-      <td>Tomatoes, mozarella, ham, olives</td>
-    </tr>
-    <tr>
-      <td>Pugliese</td>
-      <td>14zł</td>
-      <td>16zł</td>
-      <td>18zł</td>
-      <td>Tomatoes, mozarella, onion, olives</td>
-    </tr>
-    <tr>
-      <td>Diavola</td>
-      <td>14zł</td>
-      <td>16zł</td>
-      <td>19zł</td>
-      <td>Tomatoes, mozarella, salami pepperoni</td>
-    </tr>
-    <tr>
-      <td>Genovese</td>
-      <td>15zł</td>
-      <td>17zł</td>
-      <td>19zł</td>
-      <td>Tomatoes, mozarella, pesto, nuts</td>
-    </tr>
-    <tr>
-      <td>Siciliana</td>
-      <td>16zł</td>
-      <td>18zł</td>
-      <td>20zł</td>
-      <td>Tomatoes, mozarella, salami pepperoni, olives, capers</td>
-    </tr>
-    <tr>
-      <td>Vegetariana</td>
-      <td>14zł</td>
-      <td>16zł</td>
-      <td>18zł</td>
-      <td>Tomatoes, mozarella, grilled veggetables</td>
-    </tr>
-    <tr>
-      <td>Hawaii</td>
-      <td>13zł</td>
-      <td>15zł</td>
-      <td>17zł</td>
-      <td>Tomatoes, mozarella, pineapple, ham</td>
-    </tr>
+
+    {% endfor %}
 </table>
 
 {% endblock %}

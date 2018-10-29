@@ -1,0 +1,25 @@
+{% extends "orders/layout.html" %}
+{% load static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+  <div class="product-detail">
+    <h2>{{ pizza.name }} {{ pizza.size }}</h2>
+<br>    
+    <h5>Price: {{ pizza.price }} </h5> 
+    <h5>Toppings:</h5>
+      {% for t in pizza.toppings.all %} 
+        <h5>{{ t.name }}</h5>
+      {% endfor %}
+      <hr>
+      <form action="{% url 'cart:cart_add' pizza.id %}" method="post">
+            {% csrf_token %}
+          {{ cart_product_form }}
+          <br>
+            <button class="btn" type="submit">Add to cart</button>
+      </form>
+  </div>
+{% endblock %}

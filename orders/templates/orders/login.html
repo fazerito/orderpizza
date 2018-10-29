@@ -8,14 +8,18 @@
   <center><h2>You are already logged in.</h2><center>
   {% else %}
   <h1>Login</h1>
-  <form class="form-grop" method="post">
+  <div class="form-group">
+    <form class="form-grop" method="post">
     {% csrf_token %}
-    Username <input type="text" name="username" value="">
-    <br><br>
-    Password <input type="password" name="password" value="">
-    <br><br>
-    <button class= "btn" type="submit" name="button">Login</button>
-  </form>
+    <input class="form-control" type="text" name="username" placeholder="Username" value="">
+    <br>
+    <input class="form-control" type="password" name="password" placeholder="Password" value="">
+    <br>
+    <center><button class="btn" type="submit" name="button">Login</button></center>
+    
+    </form>
+  </div>
+  
   {% endif %}
 </div>
 
