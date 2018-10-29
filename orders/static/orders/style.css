@@ -18,6 +18,37 @@ h1 {
   padding-bottom: 20px;
 }
 
+h2 {
+  text-align: center;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  font-weight: bold;
+  color:inherit;
+}
+
 .jumbotron {
     background: rgba(204, 204, 204, 0.85);
+}
+
+.menu {
+  width: 1000px;
+}
+
+.form-control {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.product-detail {
+  text-align: center;
+}
+
+.btn {
+  margin-top: 10px;
+  margin-bottom: 0%;
 }
